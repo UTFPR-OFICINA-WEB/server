@@ -12,6 +12,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
 import java.util.Collection;
 
 @Entity
@@ -34,6 +36,9 @@ public class Usuario implements UserDetails {
     private String email;
 
     private Boolean ativo;
+    
+    @ManyToOne
+    private Perfil perfil;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

@@ -33,6 +33,6 @@ public class Produto implements Serializable {
     private Long estoque;
     
     @Column(nullable = false)
-    private Double valor;
+    private Number valor;
 
 }
