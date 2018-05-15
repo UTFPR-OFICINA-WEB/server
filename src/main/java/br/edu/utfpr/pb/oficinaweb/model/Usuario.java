@@ -8,6 +8,10 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import br.edu.utfpr.pb.oficinaweb.util.BooleanConverter;
+
+import javax.persistence.Column;
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -35,11 +39,14 @@ public class Usuario implements UserDetails {
 
     private String email;
 
+    @Convert(converter = BooleanConverter.class)
+    @Column(columnDefinition = "char(1) default '1'")
     private Boolean ativo;
     
     @ManyToOne
     private Perfil perfil;
 
+    
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return AuthorityUtils.NO_AUTHORITIES;
