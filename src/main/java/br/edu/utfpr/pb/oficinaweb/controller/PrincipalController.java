@@ -10,8 +10,8 @@ import java.security.Principal;
 @RequestMapping
 public class PrincipalController {
 
-    @GetMapping("user-info")
-    public Principal principal(Principal principal) {
-        return principal;
-    }
+	@GetMapping("user-info")
+	public Principal principal(Principal principal) {
+		return principal;
+	}
 }
