@@ -33,6 +33,6 @@ public class Funcionario implements Serializable{
     
     private Cargo cargo;
     
-    //private Pessoa pessoa;
+    private String pessoa;
 
 }
