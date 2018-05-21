@@ -31,7 +31,7 @@ public class Cponto implements Serializable{
     @Column(nullable = false)
     private String saida;
     
-//    private Funcionario funcionario;
+    private Funcionario funcionario;
 
 
 }
