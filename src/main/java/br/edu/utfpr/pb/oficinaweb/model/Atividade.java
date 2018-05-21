@@ -1,8 +1,6 @@
 package br.edu.utfpr.pb.oficinaweb.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,29 +8,32 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import javafx.scene.control.RadioButton;
-
-import java.io.Serializable;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Produto implements Serializable {
-
-    @Id
+public class Atividade implements Serializable{
+	
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nome;
-    private String descricao;
     
-    @Column(length = 1, nullable = false)
-    private String tipo;
+//    private Obra obra;
+	
+	private String descricao;
+    
+    private String inicio;
+    
+    private String fim;
     
     @Column(nullable = false)
-    private Long estoque;
+    private String inicioPrevisto;
     
     @Column(nullable = false)
-    private Long valor;
+    private String fimPrevisto;
 
 }
