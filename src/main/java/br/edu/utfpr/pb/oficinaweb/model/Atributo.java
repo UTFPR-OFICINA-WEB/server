@@ -15,24 +15,14 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Funcionario implements Serializable{
+public class Atributo implements Serializable {
 	
-	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    private String matricula;
-    
-    private String admissao;
-    
-    private Boolean ativo;
-    
-    private Double salario;
-    
-    private Setor setor;
-    
-    private Cargo cargo;
-    
-    private String pessoa;
+		@Id
+	    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	    private Long id;
+		
+		private String nome;
+		
+	    private String descricao;
 
 }

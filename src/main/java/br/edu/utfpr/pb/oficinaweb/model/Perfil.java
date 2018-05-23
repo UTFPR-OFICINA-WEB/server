@@ -14,6 +14,7 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -37,7 +38,7 @@ public class Perfil {
     private String nome;
     
     //mapear a lista
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
     //gravar as pemissoes como string
     @Enumerated(EnumType.STRING)
     private Set<Role> permissoes;

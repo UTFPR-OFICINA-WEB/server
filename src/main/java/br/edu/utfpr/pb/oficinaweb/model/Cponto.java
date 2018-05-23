@@ -2,6 +2,7 @@ package br.edu.utfpr.pb.oficinaweb.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,24 +16,22 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Funcionario implements Serializable{
+public class Cponto implements Serializable{
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
+	@Column(nullable = false)
+    private String data;
+    
+    @Column(nullable = false)
+    private String entrada;
+    
+    @Column(nullable = false)
+    private String saida;
+    
+    private Funcionario funcionario;
 
-    private String matricula;
-    
-    private String admissao;
-    
-    private Boolean ativo;
-    
-    private Double salario;
-    
-    private Setor setor;
-    
-    private Cargo cargo;
-    
-    private String pessoa;
 
 }
