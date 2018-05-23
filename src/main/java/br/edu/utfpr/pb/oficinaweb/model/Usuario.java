@@ -1,14 +1,7 @@
 package br.edu.utfpr.pb.oficinaweb.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.AuthorityUtils;
-import org.springframework.security.core.userdetails.UserDetails;
-
-import br.edu.utfpr.pb.oficinaweb.util.BooleanConverter;
+import java.util.Collection;
+import java.util.stream.Collectors;
 
 import javax.persistence.Column;
 import javax.persistence.Convert;
@@ -18,7 +11,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-import java.util.Collection;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import br.edu.utfpr.pb.oficinaweb.util.BooleanConverter;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
@@ -27,48 +29,52 @@ import java.util.Collection;
 @Builder
 public class Usuario implements UserDetails {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-    private String username;
+	private String username;
 
-    private String password;
+	private String password;
 
-    private String nome;
+	private String nome;
 
-    private String email;
+	private String email;
 
-    @Convert(converter = BooleanConverter.class)
-    @Column(columnDefinition = "char(1) default '1'")
-    private Boolean ativo;
-    
-    @ManyToOne
-    private Perfil perfil;
+	@Convert(converter = BooleanConverter.class)
+	@Column(columnDefinition = "char(1) default '1'")
+	private Boolean ativo;
 
-    
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return AuthorityUtils.NO_AUTHORITIES;
-    }
+	@ManyToOne
+	private Perfil perfil;
 
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		if (perfil != null) {
+			return perfil.getPermissoes().stream().map(e -> new SimpleGrantedAuthority("ROLE_" + e.name()))
+					.collect(Collectors.toList());
+		}
 
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
+		return AuthorityUtils.NO_AUTHORITIES;
+	}
 
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
+	@Override
+	public boolean isAccountNonExpired() {
+		return true;
+	}
 
-    @Override
-    public boolean isEnabled() {
-        return ativo;
-    }
+	@Override
+	public boolean isAccountNonLocked() {
+		return true;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		return ativo;
+	}
 }
