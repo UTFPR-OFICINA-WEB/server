@@ -21,9 +21,10 @@ public class Ccusto implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @Column(nullable = false)
-    private Long Codigo;
+    @Column(nullable = false, unique = true)
+    private String Codigo;
     
+    @Column(nullable = false, unique = true)
     private String descricao;
     
 }
