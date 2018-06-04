@@ -17,6 +17,8 @@ public class Produto implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
+    
+    @Column(unique = true)
     private String descricao;
     
     @Column(length = 1, nullable = false)
@@ -26,6 +28,6 @@ public class Produto implements Serializable {
     private Long estoque;
     
     @Column(nullable = false)
-    private Long valor;
+    private float valor;
 
 }
