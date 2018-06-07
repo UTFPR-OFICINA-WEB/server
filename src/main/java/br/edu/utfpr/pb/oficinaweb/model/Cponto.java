@@ -1,12 +1,19 @@
 package br.edu.utfpr.pb.oficinaweb.model;
 
 import java.io.Serializable;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.TimeZone;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,15 +29,17 @@ public class Cponto implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-	@Column(nullable = false)
-    private String data;
+	@DateTimeFormat(pattern="dd/MM/yyyy")
+	@Temporal(TemporalType.DATE)
+    private Date data;
+
+//	@Temporal(TemporalType.TIME)
+	private Calendar entrada;
+
+//	@Temporal(TemporalType.TIME)
+    private Calendar saida;
     
-    @Column(nullable = false)
-    private String entrada;
-    
-    @Column(nullable = false)
-    private String saida;
-    
+	@ManyToOne
     private Funcionario funcionario;
 
 
