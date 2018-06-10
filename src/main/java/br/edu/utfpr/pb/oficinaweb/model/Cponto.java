@@ -1,9 +1,8 @@
 package br.edu.utfpr.pb.oficinaweb.model;
 
 import java.io.Serializable;
-import java.util.Calendar;
+import java.time.LocalTime;
 import java.util.Date;
-import java.util.TimeZone;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -29,16 +28,13 @@ public class Cponto implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-	@DateTimeFormat(pattern="dd/MM/yyyy")
 	@Temporal(TemporalType.DATE)
     private Date data;
 
-//	@Temporal(TemporalType.TIME)
-	private Calendar entrada;
+    private LocalTime entrada;
 
-//	@Temporal(TemporalType.TIME)
-    private Calendar saida;
-    
+    private LocalTime saida;
+	
 	@ManyToOne
     private Funcionario funcionario;
 
