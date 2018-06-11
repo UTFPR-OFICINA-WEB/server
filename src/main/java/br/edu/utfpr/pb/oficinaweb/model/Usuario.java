@@ -29,9 +29,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class Usuario implements UserDetails {
-
 	private static final BCryptPasswordEncoder bCrypt = 
 			new BCryptPasswordEncoder();
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
