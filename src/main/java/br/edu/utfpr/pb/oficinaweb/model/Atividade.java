@@ -1,14 +1,16 @@
 package br.edu.utfpr.pb.oficinaweb.model;
 
 import java.io.Serializable;
+import java.time.LocalTime;
 import java.util.Date;
+import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -30,25 +32,34 @@ public class Atividade implements Serializable{
     
 //    private Obra obra;
 	
-	
-//    @JoinColumn(name = "idFuncionario", referencedColumnName = "id")
-	@ManyToOne
-	private Funcionario funcionario;
+	@JoinColumn(name = "idAtributo", referencedColumnName = "id")
+	@ManyToMany
+	private List <Atributo> atributo;
+		
+    @JoinColumn(name = "idFuncionario", referencedColumnName = "id")
+	@ManyToMany
+	private List <Funcionario> funcionario;
 	
 	private String descricao;
     
-	@DateTimeFormat(pattern="dd/MM/yyyy")
 	@Temporal(TemporalType.DATE)
     private Date inicio;
+	
+	private LocalTime horaInicial;
     
-	@DateTimeFormat(pattern="dd/MM/yyyy")
 	@Temporal(TemporalType.DATE)
     private Date fim;
+	
+	private LocalTime horaFinal;
+   
+	@Temporal(TemporalType.DATE)
+    private Date inicioPrevisto;
+	
+	private LocalTime horaInicialPrevisto;
     
-//    @Column(nullable = false)
-//    private Date inicioPrevisto;
-//    
-//    @Column(nullable = false)
-//    private Date fimPrevisto;
+    @Temporal(TemporalType.DATE)
+    private Date fimPrevisto;
+    
+    private LocalTime horaFinalPrevisto;
 
 }
