@@ -15,6 +15,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import br.edu.utfpr.pb.oficinaweb.util.BooleanConverter;
 import lombok.AllArgsConstructor;
@@ -28,6 +29,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class Usuario implements UserDetails {
+	private static final BCryptPasswordEncoder BCrypt = new BCryptPasswordEncoder();
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -47,6 +49,13 @@ public class Usuario implements UserDetails {
 
 	@ManyToOne
 	private Perfil perfil;
+	
+	public String getEncodedPassword(String pass) {
+		if (!pass.isEmpty()) {
+			return BCrypt.encode(pass);
+		}
+		return pass;
+	}
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
