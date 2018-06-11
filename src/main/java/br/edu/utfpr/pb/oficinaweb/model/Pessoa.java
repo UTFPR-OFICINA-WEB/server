@@ -42,4 +42,6 @@ public abstract class Pessoa implements Serializable {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "idcidade", referencedColumnName = "id")
     private Cidade cidade;
+    
+    private boolean ativo;
 }

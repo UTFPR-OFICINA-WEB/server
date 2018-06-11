@@ -16,14 +16,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Cidade {
+public class Estado {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	private String nome;
-	
-	@ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "idestado", referencedColumnName = "id")
-    private Estado estado;
 }
