@@ -2,6 +2,8 @@ package br.edu.utfpr.pb.oficinaweb.enumeration;
 
 public enum Role {
 	
+	ADMIN,
+	
 	USUARIO_CRIAR,
 	USUARIO_EDITAR,
 	USUARIO_REMOVER,
