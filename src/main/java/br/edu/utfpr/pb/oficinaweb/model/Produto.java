@@ -4,10 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
@@ -20,10 +17,17 @@ public class Produto implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
-    private String descricao;
-    private String tipo;
-    private double estoque;
-    private double valor;
 
+    @Column(unique = true)
+    private String descricao;
+    
+    @Column(length = 1, nullable = false)
+    private String tipo;
+    
+    @Column(nullable = false)
+    private Long estoque;
+    
+    @Column(nullable = false)
+    private float valor;
 
 }
