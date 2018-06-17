@@ -26,11 +26,11 @@ public class UsuarioController extends CrudController<Usuario, Long> {
     @PostMapping
     public Usuario save(@RequestBody Usuario entity) {
     	List<Usuario> usuarios = usuarioService.findAll();
-//    	for (Usuario usuario : usuarios) {
-//			if (entity.getUsername().equals(usuario.getUsername())) {
-//				throw new RuntimeException("Erro. Esse login ja existe!");
-//			}
-//		}
+    	for (Usuario usuario : usuarios) {
+			if (entity.getUsername().equals(usuario.getUsername()) && entity.getId() == null) {
+				throw new RuntimeException("Erro. Esse login ja existe!");
+			}
+		}
         entity.setPassword(entity.getEncodedPassword(entity.getPassword()));
     	return getService().save(entity);
     }
