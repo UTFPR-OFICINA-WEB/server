@@ -25,6 +25,7 @@ public class UsuarioController extends CrudController<Usuario, Long> {
     
     @PostMapping
     public Usuario save(@RequestBody Usuario entity) {
+    	System.out.println("Chegou no save->" + entity);
     	List<Usuario> usuarios = usuarioService.findAll();
 /*
     	for (Usuario usuario : usuarios) {
@@ -34,6 +35,8 @@ public class UsuarioController extends CrudController<Usuario, Long> {
 		}*/
 		
         entity.setPassword(entity.getEncodedPassword(entity.getPassword()));
+        
+        
     	return getService().save(entity);
     }
 }
