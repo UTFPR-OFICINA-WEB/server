@@ -9,7 +9,7 @@ import br.edu.utfpr.pb.oficinaweb.service.AtributoFuncService;
 import br.edu.utfpr.pb.oficinaweb.service.CrudService;
 
 @RestController
-@RequestMapping("atributofunc")
+@RequestMapping("atributof")
 public class AtributoFuncController extends CrudController<AtributoFunc, Long> {
 	
 	@Autowired
