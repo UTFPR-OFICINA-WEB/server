@@ -15,7 +15,8 @@ import br.edu.utfpr.pb.oficinaweb.service.UsuarioService;
 @Service
 public class UsuarioServiceImpl extends CrudServiceImpl<Usuario, Long> implements UsuarioService, UserDetailsService, CommandLineRunner {
 
-    @Autowired private UsuarioData usuarioData;
+    @Autowired 
+    private UsuarioData usuarioData;
 
     @Override
     protected JpaRepository<Usuario, Long> getData() {
@@ -24,7 +25,12 @@ public class UsuarioServiceImpl extends CrudServiceImpl<Usuario, Long> implement
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        return usuarioData.findByUsername(s).orElseThrow(() -> new UsernameNotFoundException("username not found"));
+        return usuarioData.findByUsername(s).orElseThrow(() -> new UsernameNotFoundException("Usuario não encontrado!"));
+    }
+    
+    @Override
+    public Iterable<Usuario> save(Iterable<Usuario> iterable) {
+    	return super.save(iterable);
     }
 
     @Override
@@ -40,5 +46,6 @@ public class UsuarioServiceImpl extends CrudServiceImpl<Usuario, Long> implement
 //
 //        usuarioData.save(usuario);
     }
+    
 
 }

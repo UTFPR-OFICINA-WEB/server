@@ -31,7 +31,7 @@ import lombok.NoArgsConstructor;
 public class Usuario implements UserDetails {
 	private static final BCryptPasswordEncoder bCrypt = 
 			new BCryptPasswordEncoder();
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -51,13 +51,14 @@ public class Usuario implements UserDetails {
 	@ManyToOne
 	private Perfil perfil;
 	
+
 	public String getEncodedPassword(String pass) {
 		if (! pass.isEmpty() ) {
 			return bCrypt.encode(pass);
 		}
 		return pass;
 	}
-	
+
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		if (perfil != null) {
@@ -67,7 +68,14 @@ public class Usuario implements UserDetails {
 
 		return AuthorityUtils.NO_AUTHORITIES;
 	}
-
+	
+	public String getEncodedPassword(String pass) {
+		if (! pass.isEmpty()) {
+			return bCrypt.encode(pass);
+		}
+		return pass;
+	}
+	
 	@Override
 	public boolean isAccountNonExpired() {
 		return true;
