@@ -52,6 +52,13 @@ public class Usuario implements UserDetails {
 	private Perfil perfil;
 	
 
+	public String getEncodedPassword(String pass) {
+		if (! pass.isEmpty() ) {
+			return bCrypt.encode(pass);
+		}
+		return pass;
+	}
+
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		if (perfil != null) {
