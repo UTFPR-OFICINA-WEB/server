@@ -1,41 +1,47 @@
 package br.edu.utfpr.pb.oficinaweb.model;
 
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
-import java.io.Serializable;
-
-@Data
 @Entity
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Pessoa implements Serializable{
+@Inheritance(strategy=InheritanceType.JOINED)
+public abstract class Pessoa implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nome")
     private String nome;
 
-    @Column(name = "descricao")
-    private String descricao;
+    private String apelido;
 
-    @Column(name = "cgc")
     private String cgc;
 
-    @Column(name = "telefone")
-    private String telefone;
+    private Long telefone;
 
-    @Column(name = "endereco")
     private String endereco;
 
-    @Column(name = "email")
     private String email;
 
-    @JoinColumn(name = "usuario")
-    private Usuario usuario;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "idcidade", referencedColumnName = "id")
+    private Cidade cidade;
+
+    private boolean ativo;
 }

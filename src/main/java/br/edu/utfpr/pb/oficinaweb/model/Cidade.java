@@ -1,11 +1,11 @@
 package br.edu.utfpr.pb.oficinaweb.model;
 
+import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
@@ -13,13 +13,15 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Cidade implements Serializable {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	private String nome;
 
-    @Column(name = "DESCRICAO")
-    private String descricao;
+	@ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "idestado", referencedColumnName = "id")
+    private Estado estado;
 
     @Column(name = "LATITUDE")
     private Double latitude;

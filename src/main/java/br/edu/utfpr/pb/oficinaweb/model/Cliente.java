@@ -1,24 +1,16 @@
 package br.edu.utfpr.pb.oficinaweb.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
 import java.io.Serializable;
 
-@Data
+import javax.persistence.Entity;
+import javax.persistence.PrimaryKeyJoinColumn;
+
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
-public class Cliente implements Serializable {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @ManyToOne
-    @JoinColumn(name = "idPessoa")
-    private Pessoa idPessoa;
-
+@Data
+@EqualsAndHashCode(callSuper=true)
+@PrimaryKeyJoinColumn(referencedColumnName="id")
+public class Cliente extends Pessoa implements Serializable{
 }
