@@ -4,14 +4,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.security.Principal;
+import br.edu.utfpr.pb.oficinaweb.enumeration.Role;
 
 @RestController
-@RequestMapping
-public class PrincipalController {
-
-	@GetMapping("user-info")
-	public Principal principal(Principal principal) {
-		return principal;
+@RequestMapping("roles")
+public class RoleController {
+	
+	@GetMapping
+	public Role[] getRoles(){
+		return Role.values();
 	}
+	
+
 }
