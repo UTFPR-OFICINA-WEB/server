@@ -69,13 +69,6 @@ public class Usuario implements UserDetails {
 		return AuthorityUtils.NO_AUTHORITIES;
 	}
 	
-	public String getEncodedPassword(String pass) {
-		if (! pass.isEmpty()) {
-			return bCrypt.encode(pass);
-		}
-		return pass;
-	}
-	
 	@Override
 	public boolean isAccountNonExpired() {
 		return true;

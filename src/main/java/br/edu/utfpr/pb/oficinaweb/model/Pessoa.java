@@ -26,22 +26,22 @@ public abstract class Pessoa implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     private String nome;
-    
+
     private String apelido;
-    
+
     private String cgc;
-    
+
     private Long telefone;
-    
+
     private String endereco;
-    
+
     private String email;
-    
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "idcidade", referencedColumnName = "id")
     private Cidade cidade;
-    
+
     private boolean ativo;
 }
