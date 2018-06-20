@@ -30,8 +30,8 @@ public class Obra implements Serializable {
     private Cliente idCliente;
 
     @ManyToOne
-    @JoinColumn(name = "idCentroCusto")
-    private CentroCusto idCentroCusto;
+    @JoinColumn(name = "idCcusto")
+    private Ccusto idCcusto;
 
     @ManyToOne
     @JoinColumn(name = "IDFORNECEDOR")
