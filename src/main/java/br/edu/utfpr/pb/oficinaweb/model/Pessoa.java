@@ -33,7 +33,7 @@ public abstract class Pessoa implements Serializable {
 
     private String cgc;
 
-    private Long telefone;
+    private String telefone;
 
     private String endereco;
 
