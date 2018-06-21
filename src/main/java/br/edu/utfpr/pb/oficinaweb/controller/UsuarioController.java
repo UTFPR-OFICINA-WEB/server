@@ -29,7 +29,8 @@ public class UsuarioController extends CrudController<Usuario, Long> {
     	List<Usuario> usuarios = usuarioService.findAll();
 
     	for (Usuario usuario : usuarios) {
-			if (entity.getUsername().equals(usuario.getUsername()) && entity.getId() == null) {
+			if ((entity.getUsername().equals(usuario.getUsername()) && entity.getId() == null)  ||
+					(entity.getUsername().equals(usuario.getUsername()) && entity.getId() != usuario.getId())){
 				throw new RuntimeException("Erro. Esse login ja existe!");
 			}
 		}

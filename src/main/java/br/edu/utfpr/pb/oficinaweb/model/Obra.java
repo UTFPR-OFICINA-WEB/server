@@ -4,9 +4,7 @@ package br.edu.utfpr.pb.oficinaweb.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.apache.tomcat.jni.Local;
 import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -38,8 +36,8 @@ public class Obra implements Serializable {
     private Fornecedor idFornecedor;
 
     @ManyToOne
-    @JoinColumn(name = "IDCIDADE")
-    private Cidade idCidade;
+    @JoinColumn(name = "IDLOCAL")
+    private Local idLocal;
 
     @Column(name="DTINICIO")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
