@@ -10,8 +10,8 @@ INSERT INTO ccusto( codigo, descricao) values( '001001001', 'Gastos com armazena
 INSERT INTO ccusto( codigo, descricao) values( '001001002', 'Gastos com salários' );
 INSERT INTO ccusto( codigo, descricao) values( '001002', 'Obras' );
 INSERT INTO ccusto( codigo, descricao) values( '001002000', 'Obra BRF');
-INSERT INTO ccusto( codigo, descricao) values( '001002000', 'Obra UTFPR');
-INSERT INTO ccusto( codigo, descricao) values( '001002000', 'Obra Kellogs');
+INSERT INTO ccusto( codigo, descricao) values( '001002001', 'Obra UTFPR');
+INSERT INTO ccusto( codigo, descricao) values( '001002002', 'Obra Kellogs');
 
 INSERT INTO atributo( nome, descricao) values( 'NR35', 'Trabalho em altura');
 INSERT INTO atributo( nome, descricao) values( 'NR10', 'Trabalho com eletricidade');
