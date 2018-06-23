@@ -30,7 +30,7 @@ public class Atividade implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-//    private Obra obra;
+    private Obra obra;
 	
 	@JoinColumn(name = "idAtributo", referencedColumnName = "id")
 	@ManyToMany

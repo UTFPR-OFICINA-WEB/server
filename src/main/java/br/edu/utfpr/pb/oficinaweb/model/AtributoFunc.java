@@ -30,8 +30,6 @@ public class AtributoFunc implements Serializable {
 	    
 		@ManyToOne
 	    private Atributo atributo;
-		
-//		private String teste;
 	    
 	    @Temporal(TemporalType.DATE)
 	    private Date dataVenc;

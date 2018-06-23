@@ -36,21 +36,32 @@ public class Usuario implements UserDetails {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	@Column(nullable=false)
 	private String username;
 
+	@Column(nullable=false)
 	private String password;
 
+	@Column(nullable=false)
 	private String nome;
 
+	@Column(nullable=false)
 	private String email;
 
 	@Convert(converter = BooleanConverter.class)
-	@Column(columnDefinition = "char(1) default '1'")
+	@Column(columnDefinition = "char(1) default '1'", nullable = false)
 	private Boolean ativo;
 
 	@ManyToOne
 	private Perfil perfil;
 	
+
+	public String getEncodedPassword(String pass) {
+		if (! pass.isEmpty() ) {
+			return bCrypt.encode(pass);
+		}
+		return pass;
+	}
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -60,13 +71,6 @@ public class Usuario implements UserDetails {
 		}
 
 		return AuthorityUtils.NO_AUTHORITIES;
-	}
-	
-	public String getEncodedPassword(String pass) {
-		if (! pass.isEmpty()) {
-			return bCrypt.encode(pass);
-		}
-		return pass;
 	}
 	
 	@Override
