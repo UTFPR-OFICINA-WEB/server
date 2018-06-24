@@ -2,11 +2,14 @@ package br.edu.utfpr.pb.oficinaweb.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,16 +19,11 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@PrimaryKeyJoinColumn(referencedColumnName="id")
-public class Funcionario extends Pessoa implements Serializable{
-
-    private String matricula;
-    
-    private String admissao;
-    
-    private Double salario;
-    
-    private Setor setor;
-    
-    private Cargo cargo;
+public class Estado implements Serializable{
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	@Column(nullable = false)
+	private String nome;
 }

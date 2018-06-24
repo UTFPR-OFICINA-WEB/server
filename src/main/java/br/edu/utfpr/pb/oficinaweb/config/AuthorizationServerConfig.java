@@ -44,4 +44,4 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .passwordEncoder(new BCryptPasswordEncoder());
     }
 
-}
+}	
