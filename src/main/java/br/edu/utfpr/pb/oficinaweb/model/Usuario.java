@@ -52,7 +52,7 @@ public class Usuario implements UserDetails {
 	@Column(columnDefinition = "char(1) default '1'", nullable = false)
 	private Boolean ativo;
 
-	@ManyToOne
+	@ManyToOne(optional = false)
 	private Perfil perfil;
 	
 
