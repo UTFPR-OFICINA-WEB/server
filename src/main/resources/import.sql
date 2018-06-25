@@ -24,9 +24,6 @@ INSERT INTO produto( descricao, estoque, nome, tipo, valor) values( 'Cimento 50x
 INSERT INTO produto( descricao, estoque, nome, tipo, valor) values( 'Disco de Corte 5pol', '10', 'Disco de corte', 'Produto', 90);
 INSERT INTO produto( descricao, estoque, nome, tipo, valor) values( 'Pintura caldeira m²', '1', 'Pintura', 'Serviço', 125);
 
-INSERT INTO estado(nome) values('Paraná');
-INSERT INTO estado(nome) values('Santa Catarina');
-
 INSERT INTO cidade(nome, idestado) values('Pato Branco','1');
 INSERT INTO cidade(nome, idestado) values('Curitiba','1');
 INSERT INTO cidade(nome, idestado) values('Florianópolis','2');
@@ -37,6 +34,7 @@ INSERT INTO cliente(id) values(1);
 
 INSERT INTO pessoa(nome, apelido, cgc, telefone, email, endereco, idcidade, ativo) values('Cimentos S\A','Loja de cimentos','00.360.305/0001-08','(46)95864-2322','cimentos@sa.com.br','2','t');
 INSERT INTO fornecedor(id) values(1);
+
 
 
 
