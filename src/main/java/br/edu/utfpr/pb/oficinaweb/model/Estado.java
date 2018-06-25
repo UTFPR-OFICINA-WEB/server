@@ -26,4 +26,7 @@ public class Estado implements Serializable{
 	
 	@Column(nullable = false)
 	private String nome;
+	
+	//@Column(nullable = false)
+	private String uf;
 }
