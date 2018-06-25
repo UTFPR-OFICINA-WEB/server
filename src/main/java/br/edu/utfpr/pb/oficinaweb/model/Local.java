@@ -11,24 +11,23 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Produto implements Serializable {
+public class Local implements Serializable {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nome;
-  
-    @Column(unique = true)
+    @Column(name="DESCRICAO")
     private String descricao;
 
-    @Column(nullable = false)
-    private String tipo;
+    @ManyToOne
+    @JoinColumn(name = "idCidade")
+    private Cidade idCidade;
 
-    @Column(nullable = false)
-    private Long estoque;
+    @Column(name="LATITUDE")
+    private Double latitude;
 
-    @Column(nullable = false)
-    private float valor;
-
+    @Column(name="LONGITUDE")
+    private Double longitude;
 }

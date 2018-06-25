@@ -2,6 +2,7 @@ package br.edu.utfpr.pb.oficinaweb.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -26,22 +27,28 @@ public abstract class Pessoa implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
+    @Column(nullable=false)
     private String nome;
-    
+
     private String apelido;
-    
+
+    @Column(nullable=false)
     private String cgc;
-    
-    private Long telefone;
-    
+
+    @Column(nullable=false)
+    private String telefone;
+
+    @Column(nullable=false)
     private String endereco;
-    
+
+    @Column(nullable=false)
     private String email;
-    
+
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "idcidade", referencedColumnName = "id")
+    @JoinColumn(name = "idcidade", referencedColumnName = "id", nullable=false)
     private Cidade cidade;
-    
+
+    @Column(nullable=false)
     private boolean ativo;
 }
