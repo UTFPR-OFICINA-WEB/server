@@ -5640,8 +5640,16 @@ INSERT INTO ccusto( codigo, descricao) values( '001.002.001', 'Obra UTFPR');
 INSERT INTO ccusto( codigo, descricao) values( '001.002.002', 'Obra Kellogs');
 	
 
+
 INSERT INTO atividade( descricao, fim, inicio, fim_previsto, inicio_previsto, hora_final, hora_inicial, hora_final_previsto, hora_inicial_previsto, obra_id) values( 'Soldagem em Caldeira', '26-06-2018', '25-06-2018', '26-06-2018', '25-06-2018', '18:00:00', '08:00:00', '18:00:00', '08:00:00', 1);
 INSERT INTO atividade( descricao, fim, inicio, fim_previsto, inicio_previsto, hora_final, hora_inicial, hora_final_previsto, hora_inicial_previsto, obra_id) values( 'Lavagem de forno', '29-06-2018', '27-06-2018', '28-06-2018', '27-06-2018', '17:00:00', '07:00:00', '17:00:00', '07:00:00', 1);
+
+INSERT INTO pessoa(nome, apelido, cgc, telefone, email, endereco, idcidade, ativo) values('Francisco','Chico','032.258.642-23','(46)95864-2345','chico@gmail.com','1','t');
+INSERT INTO cliente(id) values(1);
+
+INSERT INTO pessoa(nome, apelido, cgc, telefone, email, endereco, idcidade, ativo) values('Cimentos S\A','Loja de cimentos','00.360.305/0001-08','(46)95864-2322','cimentos@sa.com.br','2','t');
+INSERT INTO fornecedor(id) values(1);
+
 
 
 INSERT INTO atividade_atributo(atividade_id, atributo_id) VALUES (1, 1);
