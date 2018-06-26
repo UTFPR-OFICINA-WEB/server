@@ -31,6 +31,7 @@ public abstract class Pessoa implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+
     @Column(nullable=false)
     @NotNull
     private String nome;
@@ -50,8 +51,11 @@ public abstract class Pessoa implements Serializable {
     @NotNull
     private String endereco;
 
+<<<<<<< HEAD
     @Column(nullable=false)
     @NotNull
+=======
+>>>>>>> fce57d52f895befc0fd484de3634360db43998a2
     private String email;
 
     @ManyToOne(fetch = FetchType.EAGER)

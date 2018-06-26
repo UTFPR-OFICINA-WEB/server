@@ -5644,9 +5644,16 @@ INSERT INTO ccusto( codigo, descricao) values( '001.002.002', 'Obra Kellogs');
 	
 
 
+<<<<<<< HEAD
 INSERT INTO atividade( descricao, fim, inicio, fim_previsto, inicio_previsto, hora_final, hora_inicial, hora_final_previsto, hora_inicial_previsto, obra_id) values( 'Soldagem em Caldeira', '26-06-2018', '25-06-2018', '26-06-2018', '25-06-2018', '18:00:00', '08:00:00', '18:00:00', '08:00:00', 1);
 INSERT INTO atividade( descricao, fim, inicio, fim_previsto, inicio_previsto, hora_final, hora_inicial, hora_final_previsto, hora_inicial_previsto, obra_id) values( 'Lavagem de forno', '29-06-2018', '27-06-2018', '28-06-2018', '27-06-2018', '17:00:00', '07:00:00', '17:00:00', '07:00:00', 1);
 
+=======
+INSERT INTO cidade(nome, idestado) values('Pato Branco','1');
+INSERT INTO cidade(nome, idestado) values('Curitiba','1');
+INSERT INTO cidade(nome, idestado) values('Florianópolis','2');
+INSERT INTO cidade(nome, idestado) values('Campo Erê','2');
+>>>>>>> fce57d52f895befc0fd484de3634360db43998a2
 
 
 
@@ -5659,6 +5666,10 @@ INSERT INTO cargo(descricao, nome) VALUES ('Analista Administrativo', 'Analista'
 INSERT INTO cargo(descricao, nome) VALUES ('Assistente Administrativo', 'Assistente');
 INSERT INTO cargo(descricao, nome) VALUES ('Auxiliar Administrativo', 'Auxiliar');
 
+<<<<<<< HEAD
 INSERT INTO setor(descricao) VALUES ('Financeiro');
 INSERT INTO setor(descricao) VALUES ('Faturamento');
 INSERT INTO setor(descricao) VALUES ('TI');
+=======
+
+>>>>>>> fce57d52f895befc0fd484de3634360db43998a2
