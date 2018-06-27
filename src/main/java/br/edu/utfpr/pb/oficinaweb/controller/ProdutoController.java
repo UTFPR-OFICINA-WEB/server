@@ -14,7 +14,8 @@ public class ProdutoController extends CrudController<Produto, Long> {
     @Autowired private ProdutoService produtoService;
 
     @Override
-    protected CrudService<Produto, Long> getService() {
+    protected CrudService<Produto, Long> getService()
+    {
         return produtoService;
     }
 }
