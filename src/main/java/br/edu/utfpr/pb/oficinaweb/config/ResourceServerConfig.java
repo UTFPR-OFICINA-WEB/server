@@ -32,6 +32,8 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .antMatchers("/requisitos/**").hasAnyRole("ADMIN,REQUISITOS_CRIAR,REQUISITOS_EDITAR,REQUISITOS_REMOVER")
                 .antMatchers("/ccusto/**").hasAnyRole("ADMIN,CENTROCUSTO_CRIAR,CENTROCUSTO_EDITAR,CENTROCUSTO_REMOVER")
                 .antMatchers("/bancohoras/**").hasAnyRole("ADMIN,RELATORIOBANCOHORAS")
+                .antMatchers("/consumoObra/**").hasAnyRole("ADMIN,CONSUMO_OBRAS_CRIAR,CONSUMO_OBRAS_EDITAR,CONSUMO_OBRAS_REMOVER")
+                .antMatchers("/devolucao/**").hasAnyRole("ADMIN,DEVOLUCAO_CRIAR,DEVOLUCAO_EDITAR,DEVOLUCAO_REMOVER")
                 .anyRequest().authenticated();
     }
 }
