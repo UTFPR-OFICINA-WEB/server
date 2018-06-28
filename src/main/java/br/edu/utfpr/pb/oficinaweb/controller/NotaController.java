@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 
 @RestController
 @RequestMapping("nota")
@@ -15,10 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class NotaController extends CrudController<Nota, Long>{
 
     @Autowired private NotaService notaService;
-
+    @Valid
     @Override
     protected CrudService<Nota, Long> getService() {
-
         return notaService;
     }
 }
