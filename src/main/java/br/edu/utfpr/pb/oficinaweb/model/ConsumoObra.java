@@ -28,7 +28,7 @@ public class ConsumoObra implements Serializable {
     private Long qtd;
 
     @ManyToOne(optional = false)
-    private Produto produto;
+    private ItemNota itemNota;
 
 
 }
