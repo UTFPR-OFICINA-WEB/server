@@ -25,11 +25,12 @@ public class UsuarioController extends CrudController<Usuario, Long> {
     
     @PostMapping
     public Usuario save(@RequestBody Usuario entity) {
-    	System.out.println("Chegou no save->" + entity);
+    	//System.out.println("Chegou no save->" + entity);
     	List<Usuario> usuarios = usuarioService.findAll();
 
     	for (Usuario usuario : usuarios) {
-			if (entity.getUsername().equals(usuario.getUsername()) && entity.getId() == null) {
+			if ((entity.getUsername().equals(usuario.getUsername()) && entity.getId() == null)  ||
+					(entity.getUsername().equals(usuario.getUsername()) && entity.getId() != usuario.getId())){
 				throw new RuntimeException("Erro. Esse login ja existe!");
 			}
 		}

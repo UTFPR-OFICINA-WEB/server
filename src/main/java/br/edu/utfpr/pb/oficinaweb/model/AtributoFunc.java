@@ -3,6 +3,7 @@ package br.edu.utfpr.pb.oficinaweb.model;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,13 +26,14 @@ public class AtributoFunc implements Serializable {
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    private Long id;
 		
-		@ManyToOne
+		@ManyToOne(optional = false)
 	    private Funcionario funcionario;
 	    
-		@ManyToOne
+		@ManyToOne(optional = false)
 	    private Atributo atributo;
 	    
 	    @Temporal(TemporalType.DATE)
+	    @Column(nullable = false)
 	    private Date dataVenc;
 
 }

@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -42,7 +41,7 @@ public class Obra implements Serializable {
     private Fornecedor idFornecedor;
 
     @ManyToOne
-    @NotNull
+
     @JoinColumn(name = "IDLOCAL")
     private Local idLocal;
 
