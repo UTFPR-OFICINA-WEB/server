@@ -4,12 +4,10 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,8 +23,8 @@ public class Estado implements Serializable{
 	private Long id;
 	
 	@Column(nullable = false)
+	@NotNull
 	private String nome;
 	
-	//@Column(nullable = false)
-	private String uf;
-}
+	//@Column(nullable = true)
+	//private String uf;

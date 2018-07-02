@@ -12,6 +12,9 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -30,19 +33,26 @@ public abstract class Pessoa implements Serializable {
 
 
     @Column(nullable=false)
+    @NotNull
     private String nome;
 
+    @Column(nullable=true)
     private String apelido;
 
     @Column(nullable=false)
+    @NotNull
     private String cgc;
 
     @Column(nullable=false)
+    @NotNull
     private String telefone;
 
     @Column(nullable=false)
+    @NotNull
     private String endereco;
 
+    @Column(nullable=false)
+    @NotNull
     private String email;
 
     @ManyToOne(fetch = FetchType.EAGER)
