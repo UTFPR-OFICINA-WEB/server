@@ -16,13 +16,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Cargo implements Serializable {
-	
-		@Id
-	    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	    private Long id;
-		
-		private String nome;
-		
-	    private String descricao;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String nome;
+
+    private String descricao;
 
 }

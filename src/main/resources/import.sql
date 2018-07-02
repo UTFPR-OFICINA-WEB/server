@@ -1,3 +1,4 @@
+
 INSERT INTO estado (nome) VALUES ('Acre');
 INSERT INTO estado (nome) VALUES ('Alagoas');
 INSERT INTO estado (nome) VALUES ('Amazonas');
@@ -5602,16 +5603,11 @@ INSERT INTO atributo( nome, descricao) values( 'NR35', 'Trabalho em altura');
 INSERT INTO atributo( nome, descricao) values( 'NR10', 'Trabalho com eletricidade');
 INSERT INTO atributo(nome, descricao) values( 'NR18', 'Espaços confinados');
 
-INSERT INTO pessoa (apelido, ativo, cgc, email, endereco, nome, telefone, idcidade) values('Joao da Silva',TRUE,'785.569.124-55','joao@msn.com','Aimore 99','Joao da Silva','(46)99932-8899',2);
-INSERT INTO pessoa (apelido, ativo, cgc, email, endereco, nome, telefone, idcidade) values('Maria Jose',TRUE,'214.365.258-74','maria@msn.com','Aimore 33','Maria Jose', '(46)98932-6655',1);
+
+INSERT INTO pessoa (apelido, ativo, cgc, email, endereco, nome) values('Joao da Silva',true,00987677,'joao@msn.com','Aimore 99','Joao da Silva');
+INSERT INTO pessoa (apelido, ativo, cgc, email, endereco, nome) values('Maria Jose',true,009876227,'maria@msn.com','Aimore 33','Maria Jose');
 INSERT INTO cliente (id) values(1);
 INSERT INTO cliente (id) values(2);
-
-INSERT INTO pessoa (apelido, ativo, cgc, email, endereco, nome, telefone, idcidade) values('Vomislei Cimentos',TRUE,'22.321.456/0001-66','vomis@cimento.com','Aimore 99','Vomislei S\A','(46)95647-8899',77);
-INSERT INTO pessoa (apelido, ativo, cgc, email, endereco, nome, telefone, idcidade) values('Rancho Iguaçu',TRUE,'71.256.328/0001-42','iguaçu@rancho.com','Aimore 33','Rancho LTDA', '(46)91497-6655',82);
-INSERT INTO fornecedor (id) values(3);
-INSERT INTO fornecedor (id) values(4);
-
 INSERT INTO nota (data_emissao, data_entrada, id_pessoa) values('2018-06-21','2018-05-21' , 1);
 INSERT INTO nota (data_emissao, data_entrada, id_pessoa) values('2018-06-22','2018-04-22' , 1);
 INSERT INTO item_nota (quantidade, valor_total, valor_unitario, id_nota, id_produto) values(5,0,345,1,1);
@@ -5642,9 +5638,56 @@ INSERT INTO ccusto( codigo, descricao) values( '001.002', 'Obras' );
 INSERT INTO ccusto( codigo, descricao) values( '001.002.000', 'Obra BRF');
 INSERT INTO ccusto( codigo, descricao) values( '001.002.001', 'Obra UTFPR');
 INSERT INTO ccusto( codigo, descricao) values( '001.002.002', 'Obra Kellogs');
+	
+
 
 INSERT INTO atividade( descricao, fim, inicio, fim_previsto, inicio_previsto, hora_final, hora_inicial, hora_final_previsto, hora_inicial_previsto, obra_id) values( 'Soldagem em Caldeira', '26-06-2018', '25-06-2018', '26-06-2018', '25-06-2018', '18:00:00', '08:00:00', '18:00:00', '08:00:00', 1);
 INSERT INTO atividade( descricao, fim, inicio, fim_previsto, inicio_previsto, hora_final, hora_inicial, hora_final_previsto, hora_inicial_previsto, obra_id) values( 'Lavagem de forno', '29-06-2018', '27-06-2018', '28-06-2018', '27-06-2018', '17:00:00', '07:00:00', '17:00:00', '07:00:00', 1);
+
+
+INSERT INTO cponto (data, entrada, saida, funcionario_id) values ('2018-06-20', '07:50:00', '18:10:00', 1);
+INSERT INTO cponto (data, entrada, saida, funcionario_id) values ('2018-06-21', '07:55:00', '18:03:00', 1);
+INSERT INTO cponto (data, entrada, saida, funcionario_id) values ('2018-06-22', '07:59:00', '17:57:00', 1);
+INSERT INTO produto( descricao, estoque, nome, tipo, valor) values( 'Cimento 50x1', 80, 'cimento', 'Produto', 30);
+INSERT INTO produto( descricao, estoque, nome, tipo, valor) values( 'Disco de Corte 5pol', 10, 'Disco de corte', 'Produto', 90);
+INSERT INTO produto( descricao, estoque, nome, tipo, valor) values( 'Pintura caldeira m²', 1, 'Pintura', 'Serviço', 125);
+INSERT INTO produto (descricao, estoque, nome, tipo, valor) values('Parafuso 2/3', 200, 'Parafuso com rosca', 'Produto', 45);
+INSERT INTO produto (descricao, estoque, nome, tipo, valor) values('Parafuso 2/9', 200, 'Parafuso com porca', 'Produto', 4);
+INSERT INTO ccusto( codigo, descricao) values('001.001', 'Administrativo' );
+INSERT INTO ccusto( codigo, descricao) values( '001.001.000', 'Gastos com impostos' );
+INSERT INTO ccusto( codigo, descricao) values( '001.001.001', 'Gastos com armazenagem' );
+INSERT INTO ccusto( codigo, descricao) values( '001.001.002', 'Gastos com salários' );
+INSERT INTO ccusto( codigo, descricao) values( '001.002', 'Obras' );
+INSERT INTO ccusto( codigo, descricao) values( '001.002.000', 'Obra BRF');
+INSERT INTO ccusto( codigo, descricao) values( '001.002.001', 'Obra UTFPR');
+INSERT INTO ccusto( codigo, descricao) values( '001.002.002', 'Obra Kellogs');
+
+INSERT INTO atividade( descricao, fim, inicio, fim_previsto, inicio_previsto, hora_final, hora_inicial, hora_final_previsto, hora_inicial_previsto, obra_id) values( 'Soldagem em Caldeira', '26-06-2018', '25-06-2018', '26-06-2018', '25-06-2018', '18:00:00', '08:00:00', '18:00:00', '08:00:00', 1);
+INSERT INTO atividade( descricao, fim, inicio, fim_previsto, inicio_previsto, hora_final, hora_inicial, hora_final_previsto, hora_inicial_previsto, obra_id) values( 'Lavagem de forno', '29-06-2018', '27-06-2018', '28-06-2018', '27-06-2018', '17:00:00', '07:00:00', '17:00:00', '07:00:00', 1);
+
+INSERT INTO atividade_atributo(atividade_id, atributo_id) VALUES (1, 1);
+INSERT INTO atividade_atributo(atividade_id, atributo_id) VALUES (2, 1);
+INSERT INTO atividade_funcionario(atividade_id, funcionario_id)	VALUES (1, 1);
+INSERT INTO atividade_funcionario(atividade_id, funcionario_id)	VALUES (2, 1);
+
+
+INSERT INTO PESSOA( ID, NOME, ATIVO ) VALUES ( 1, 'Funcionario 01', TRUE );
+INSERT INTO PESSOA( ID, NOME, ATIVO ) VALUES ( 2, 'Funcionario 01', TRUE );
+SELECT setval( 'public.pessoa_id_seq', 2, TRUE );
+INSERT INTO FUNCIONARIO( ID, MATRICULA ) VALUES ( 1, 'ABC123' );
+INSERT INTO FUNCIONARIO( ID, MATRICULA ) VALUES ( 2, 'ABC124' );
+
+INSERT INTO cponto( DATA, ENTRADA, SAIDA, FUNCIONARIO_ID) VALUES ( '2018-06-01', '08:00:00', '12:00:00', 1);
+INSERT INTO cponto( DATA, ENTRADA, SAIDA, FUNCIONARIO_ID) VALUES ( '2018-06-01', '13:00:00', '18:00:00', 1);
+INSERT INTO cponto( DATA, ENTRADA, SAIDA, FUNCIONARIO_ID) VALUES ( '2018-06-03', '07:45:00', '12:00:00', 1);
+INSERT INTO cponto( DATA, ENTRADA, SAIDA, FUNCIONARIO_ID) VALUES ( '2018-06-03', '13:30:00', '18:00:00', 1);
+INSERT INTO cponto( DATA, ENTRADA, SAIDA, FUNCIONARIO_ID) VALUES ( '2018-06-01', '07:45:00', '12:00:00', 2);
+INSERT INTO cponto( DATA, ENTRADA, SAIDA, FUNCIONARIO_ID) VALUES ( '2018-06-01', '13:30:00', '18:00:00', 2);
+INSERT INTO cponto( DATA, ENTRADA, SAIDA, FUNCIONARIO_ID) VALUES ( '2018-06-02', '08:00:00', '12:00:00', 2);
+INSERT INTO cponto( DATA, ENTRADA, SAIDA, FUNCIONARIO_ID) VALUES ( '2018-06-02', '13:00:00', '18:00:00', 2);
+
+
+
 
 INSERT INTO atividade_atributo(atividade_id, atributo_id) VALUES (1, 1);
 INSERT INTO atividade_atributo(atividade_id, atributo_id) VALUES (2, 1);
@@ -5655,7 +5698,7 @@ INSERT INTO cargo(descricao, nome) VALUES ('Analista Administrativo', 'Analista'
 INSERT INTO cargo(descricao, nome) VALUES ('Assistente Administrativo', 'Assistente');
 INSERT INTO cargo(descricao, nome) VALUES ('Auxiliar Administrativo', 'Auxiliar');
 
+
 INSERT INTO setor(descricao) VALUES ('Financeiro');
 INSERT INTO setor(descricao) VALUES ('Faturamento');
 INSERT INTO setor(descricao) VALUES ('TI');
-
