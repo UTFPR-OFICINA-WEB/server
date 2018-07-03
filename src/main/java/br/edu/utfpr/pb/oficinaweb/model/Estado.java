@@ -28,3 +28,4 @@ public class Estado implements Serializable{
 	
 	//@Column(nullable = true)
 	//private String uf;
+}
