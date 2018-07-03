@@ -36,19 +36,23 @@ public class Usuario implements UserDetails {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	@Column(nullable=false)
 	private String username;
 
+	@Column(nullable=false)
 	private String password;
 
+	@Column(nullable=false)
 	private String nome;
 
+	@Column(nullable=false)
 	private String email;
 
 	@Convert(converter = BooleanConverter.class)
-	@Column(columnDefinition = "char(1) default '1'")
+	@Column(columnDefinition = "char(1) default '1'", nullable = false)
 	private Boolean ativo;
 
-	@ManyToOne
+	@ManyToOne(optional = false)
 	private Perfil perfil;
 	
 
