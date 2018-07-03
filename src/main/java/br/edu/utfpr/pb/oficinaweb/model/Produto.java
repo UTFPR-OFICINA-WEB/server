@@ -30,6 +30,7 @@ public class Produto implements Serializable {
     @Column(nullable = false)
     private String descricao;
 
+
     @Column(nullable = false)
     private String tipo;
 

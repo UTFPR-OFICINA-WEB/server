@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 @Entity
@@ -19,11 +20,13 @@ public class ItemNota implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long id;
+
+    @Column(nullable = false)
     private double quantidade;
+
+    @Column(nullable = false)
     private double valorUnitario;
-    private double valorTotal;
 
     @ManyToOne
     @JoinColumn(name = "idProduto", referencedColumnName = "id")
@@ -32,6 +35,5 @@ public class ItemNota implements Serializable {
     @ManyToOne
     @JoinColumn(name = "idNota", referencedColumnName = "id")
     @JsonIgnore
-     private Nota nota;
-
+    private Nota nota;
 }

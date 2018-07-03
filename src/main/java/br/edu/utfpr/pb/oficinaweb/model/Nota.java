@@ -18,6 +18,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -28,8 +30,12 @@ public class Nota implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String dataEmissao;
+
+    @Column(nullable = false)
     private String dataEntrada;
+
 
     @OneToMany(mappedBy ="nota", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     private List<ItemNota> itensNota;
@@ -38,5 +44,9 @@ public class Nota implements Serializable{
     @JoinColumn(name = "id_pessoa", referencedColumnName = "id")
     private Cliente cliente;
 
+    //@ManyToOne(fetch = FetchType.EAGER)
+    //@ManyToOne(optional = false)
+    //@JoinColumn(name = "id_pessoa", referencedColumnName = "id")
+    //private Cliente cliente;
 
 }
