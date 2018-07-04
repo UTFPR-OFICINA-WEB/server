@@ -23,7 +23,6 @@ public class CidadeController extends CrudController<Cidade, Long> {
     protected CrudService<Cidade, Long> getService() {
         return cidadeService;
     }
-
     @GetMapping("/findByEstado")
     public List<Cidade> findByEstado(Long id){
     	return cidadeService.findByEstado(estadoService.findOne(id));

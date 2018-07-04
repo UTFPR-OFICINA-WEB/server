@@ -6,6 +6,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.io.Serializable;
 import java.util.List;
 
@@ -38,7 +39,7 @@ public abstract class CrudController<T, ID extends Serializable> {
     }
 
     @PostMapping
-    public T save(@RequestBody T entity) {
+    public T save(@RequestBody @Valid T entity) {
         return getService().save(entity);
     }
 

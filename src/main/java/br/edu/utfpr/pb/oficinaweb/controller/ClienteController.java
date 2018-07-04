@@ -1,6 +1,7 @@
 package br.edu.utfpr.pb.oficinaweb.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,4 +19,7 @@ public class ClienteController extends CrudController<Cliente, Long> {
     protected CrudService<Cliente, Long> getService() {
         return clienteService;
     }
+
+
+
 }
