@@ -5606,8 +5606,29 @@ INSERT INTO cidade (nome, idestado) VALUES	('Xambioá', 27);
 INSERT INTO perfil (nome) values('Administrador');
 
 INSERT INTO perfil_permissoes (perfil_id, permissoes) values(1, 'ADMIN');
-
 INSERT INTO usuario (username, password, nome, email, ativo, perfil_id) values('admin', '$2a$10$MUxruSV6fspjMTv.axUKPuss2raoer5K9vN2Eue80NxTkB6nnVoPG', 'Administrador', 'admin@admin.com', 1, 1);
+
+INSERT INTO pessoa (apelido, ativo, cgc, email, endereco, nome, telefone, idcidade) values('Joao da Silva',true,00987667,'joao@msn.com','Aimore 99','Joao da Silva','4699984758',1);
+INSERT INTO pessoa (apelido, ativo, cgc, email, endereco, nome, telefone, idcidade) values('Claudio da Silva',true,00567677,'claudio@msn.com','Aimore 199','Claudio da Silva','4699984558',2);
+INSERT INTO pessoa (apelido, ativo, cgc, email, endereco, nome, telefone, idcidade) values('Maria da Silva',true,00986777,'maria@msn.com','Aimore 299','Maria da Silva','4699984758',2);
+
+INSERT INTO cliente (id) values(1);
+INSERT INTO cliente (id) values(2);
+INSERT INTO cliente (id) values(3);
+INSERT INTO produto (descricao, estoque, nome, tipo, valor) values('Parafuso 2/3', 200, 'Parafuso com rosca', 'Produto', 45);
+INSERT INTO produto (descricao, estoque, nome, tipo, valor) values('Parafuso 2/9', 200, 'Parafuso com porca', 'Produto', 4);
+INSERT INTO nota (data_emissao, data_entrada, id_pessoa) values('2018-06-21','2018-05-21' , 1);
+INSERT INTO nota (data_emissao, data_entrada, id_pessoa) values('2018-06-22','2018-04-22' , 1);
+INSERT INTO nota (data_emissao, data_entrada, id_pessoa) values('2018-06-21','2018-05-21' , 1);
+INSERT INTO nota (data_emissao, data_entrada, id_pessoa) values('2018-06-22','2018-04-22' , 1);
+INSERT INTO item_nota (quantidade, valor_unitario, id_nota, id_produto) values(5,45,1,1);
+INSERT INTO item_nota (quantidade, valor_unitario, id_nota, id_produto) values(6,45,2,2);
+INSERT INTO item_nota (quantidade, valor_unitario, id_nota, id_produto) values(5,45,3,1);
+INSERT INTO item_nota (quantidade, valor_unitario, id_nota, id_produto) values(5,45,4,1);
+
+
+INSERT INTO usuario (username, password, nome, email, ativo, perfil_id)
+values('admin', '$2a$10$MUxruSV6fspjMTv.axUKPuss2raoer5K9vN2Eue80NxTkB6nnVoPG', 'Administrador', 'admin@admin.com', 1, 1);
 
 INSERT INTO atributo( nome, descricao) values( 'NR35', 'Trabalho em altura');
 INSERT INTO atributo( nome, descricao) values( 'NR10', 'Trabalho com eletricidade');
@@ -5622,6 +5643,7 @@ INSERT INTO nota (data_emissao, data_entrada, id_pessoa) values('2018-06-21','20
 INSERT INTO nota (data_emissao, data_entrada, id_pessoa) values('2018-06-22','2018-04-22' , 1);
 INSERT INTO item_nota (quantidade, valor_total, valor_unitario, id_nota, id_produto) values(5,0,345,1,1);
 INSERT INTO item_nota (quantidade, valor_total, valor_unitario, id_nota, id_produto) values(6,0,99,2,2);
+
 
 INSERT INTO pessoa (apelido, ativo, cgc, email, endereco, nome, telefone, idcidade) values('Vomislei Cimentos',TRUE,'22.321.456/0001-66','vomis@cimento.com','Aimore 99','Vomislei S\A','(46)95647-8899',77);
 INSERT INTO pessoa (apelido, ativo, cgc, email, endereco, nome, telefone, idcidade) values('Rancho Iguaçu',TRUE,'71.256.328/0001-42','iguaçu@rancho.com','Aimore 33','Rancho LTDA', '(46)91497-6655',82);
@@ -5721,6 +5743,3 @@ INSERT INTO cargo(descricao, nome) VALUES ('Auxiliar Administrativo', 'Auxiliar'
 INSERT INTO setor(descricao) VALUES ('Financeiro');
 INSERT INTO setor(descricao) VALUES ('Faturamento');
 INSERT INTO setor(descricao) VALUES ('TI');
-
-
-
