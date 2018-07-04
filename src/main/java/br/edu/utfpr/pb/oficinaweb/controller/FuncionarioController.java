@@ -1,5 +1,7 @@
 package br.edu.utfpr.pb.oficinaweb.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,7 +15,7 @@ import br.edu.utfpr.pb.oficinaweb.service.FuncionarioService;
 public class FuncionarioController extends CrudController<Funcionario, Long> {
 	
 	@Autowired private FuncionarioService funcionarioService;
-	
+	@Valid
 	@Override
 	protected CrudService<Funcionario, Long> getService() {
 		return funcionarioService;
