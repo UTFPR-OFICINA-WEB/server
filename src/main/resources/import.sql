@@ -5613,21 +5613,28 @@ INSERT INTO atributo( nome, descricao) values( 'NR35', 'Trabalho em altura');
 INSERT INTO atributo( nome, descricao) values( 'NR10', 'Trabalho com eletricidade');
 INSERT INTO atributo(nome, descricao) values( 'NR18', 'Espaços confinados');
 
-
-INSERT INTO pessoa (apelido, ativo, cgc, email, endereco, nome) values('Joao da Silva',true,00987677,'joao@msn.com','Aimore 99','Joao da Silva');
-INSERT INTO pessoa (apelido, ativo, cgc, email, endereco, nome) values('Maria Jose',true,009876227,'maria@msn.com','Aimore 33','Maria Jose');
+INSERT INTO pessoa (apelido, ativo, cgc, email, endereco, nome, telefone, idcidade) values('Joao da Silva',TRUE,'785.569.124-55','joao@msn.com','Aimore 99','Joao da Silva','(46)99932-8899',2);
+INSERT INTO pessoa (apelido, ativo, cgc, email, endereco, nome, telefone, idcidade) values('Maria Jose',TRUE,'214.365.258-74','maria@msn.com','Aimore 33','Maria Jose', '(46)98932-6655',1);
 INSERT INTO cliente (id) values(1);
 INSERT INTO cliente (id) values(2);
+
 INSERT INTO nota (data_emissao, data_entrada, id_pessoa) values('2018-06-21','2018-05-21' , 1);
 INSERT INTO nota (data_emissao, data_entrada, id_pessoa) values('2018-06-22','2018-04-22' , 1);
 INSERT INTO item_nota (quantidade, valor_total, valor_unitario, id_nota, id_produto) values(5,0,345,1,1);
 INSERT INTO item_nota (quantidade, valor_total, valor_unitario, id_nota, id_produto) values(6,0,99,2,2);
 
+INSERT INTO pessoa (apelido, ativo, cgc, email, endereco, nome, telefone, idcidade) values('Vomislei Cimentos',TRUE,'22.321.456/0001-66','vomis@cimento.com','Aimore 99','Vomislei S\A','(46)95647-8899',77);
+INSERT INTO pessoa (apelido, ativo, cgc, email, endereco, nome, telefone, idcidade) values('Rancho Iguaçu',TRUE,'71.256.328/0001-42','iguaçu@rancho.com','Aimore 33','Rancho LTDA', '(46)91497-6655',82);
+INSERT INTO fornecedor (id) values(3);
+INSERT INTO fornecedor (id) values(4);
+
 insert into obra(descricao) values ('Obra 1');
 insert into obra(descricao) values ('Obra 2');
 insert into obra(descricao) values ('Obra 3');
 
+
 INSERT INTO funcionario (matricula, admissao, salario, cargo, setor, id_pessoa) values(1, '2018-06-25', 2, 2, 1234, 1);
+
 
 INSERT INTO atributo_func(data_venc, atributo_id, funcionario_id) values( '18-06-2018', 1, 1);
 INSERT INTO atributo_func(data_venc, atributo_id, funcionario_id) values( '20-06-2018', 3, 1);
@@ -5681,11 +5688,12 @@ INSERT INTO atividade_funcionario(atividade_id, funcionario_id)	VALUES (1, 1);
 INSERT INTO atividade_funcionario(atividade_id, funcionario_id)	VALUES (2, 1);
 
 
-INSERT INTO PESSOA( ID, NOME, ATIVO ) VALUES ( 1, 'Funcionario 01', TRUE );
-INSERT INTO PESSOA( ID, NOME, ATIVO ) VALUES ( 2, 'Funcionario 01', TRUE );
+INSERT INTO pessoa (apelido, ativo, cgc, email, endereco, nome, telefone, idcidade) values('Aline',TRUE,'123.456.789-42','aline@utfpr.com.edu.br','Aimore 44','Alineee','(46)9888-8899',72);
+INSERT INTO pessoa (apelido, ativo, cgc, email, endereco, nome, telefone, idcidade) values('Carla',TRUE,'987.654.321-42','carla@utfpr.com.edu.br','Aimore 88','Carlaaa', '(46)96757-6655',8);
 SELECT setval( 'public.pessoa_id_seq', 2, TRUE );
-INSERT INTO FUNCIONARIO( ID, MATRICULA ) VALUES ( 1, 'ABC123' );
-INSERT INTO FUNCIONARIO( ID, MATRICULA ) VALUES ( 2, 'ABC124' );
+INSERT INTO FUNCIONARIO( ID, MATRICULA ) VALUES ( 5, 'ABC123' );
+INSERT INTO FUNCIONARIO( ID, MATRICULA ) VALUES ( 6, 'ABC124' );
+
 
 INSERT INTO cponto( DATA, ENTRADA, SAIDA, FUNCIONARIO_ID) VALUES ( '2018-06-01', '08:00:00', '12:00:00', 1);
 INSERT INTO cponto( DATA, ENTRADA, SAIDA, FUNCIONARIO_ID) VALUES ( '2018-06-01', '13:00:00', '18:00:00', 1);
@@ -5701,8 +5709,9 @@ INSERT INTO cponto( DATA, ENTRADA, SAIDA, FUNCIONARIO_ID) VALUES ( '2018-06-02',
 
 INSERT INTO atividade_atributo(atividade_id, atributo_id) VALUES (1, 1);
 INSERT INTO atividade_atributo(atividade_id, atributo_id) VALUES (2, 1);
-INSERT INTO atividade_funcionario(atividade_id, funcionario_id)	VALUES (1, 1);
-INSERT INTO atividade_funcionario(atividade_id, funcionario_id)	VALUES (2, 1);
+INSERT INTO atividade_funcionario(atividade_id, funcionario_id)	VALUES (1, 5);
+INSERT INTO atividade_funcionario(atividade_id, funcionario_id)	VALUES (2, 5);
+
 
 INSERT INTO cargo(descricao, nome) VALUES ('Analista Administrativo', 'Analista');
 INSERT INTO cargo(descricao, nome) VALUES ('Assistente Administrativo', 'Assistente');
